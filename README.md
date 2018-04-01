@@ -34,8 +34,8 @@ Luat团队会一直同步维护这两个版本，建议新项目使用script_Lua
 ## 在线文档
 
 - 如果你想了解script_LuaTask中实现了哪些功能，请点击：
-- <<[script_LuaTask lib参考手册](https://htmlpreview.github.io/?https://github.com/zhutianhua/Luat/script_LuaTask/blob/master/doc/lib/index.html)>>
-- <<[script_LuaTask demo参考手册](https://htmlpreview.github.io/?https://github.com/zhutianhua/Luat/script_LuaTask/blob/master/doc/demo/index.html)>>
+- <<[script_LuaTask lib参考手册](https://htmlpreview.github.io/?https://github.com/zhutianhua/Luat/blob/master/script_LuaTask/doc/lib/index.html)>>
+- <<[script_LuaTask demo参考手册](https://htmlpreview.github.io/?https://github.com/zhutianhua/Luat/blob/master/script_LuaTask/doc/demo/index.html)>>
 
 ## 下载地址
 
