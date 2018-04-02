@@ -74,7 +74,8 @@ end
 --
 --如果没有设置此参数，则升级包下载成功后，会自动重启
 -- @string url，可选，使用http的get命令下载升级包的url，如果没有设置此参数，默认使用Luat iot平台的url
--- 如果没有用户设置了url，注意：仅传入完整url的前半部分(如果有参数，即传入?前一部分)，http.lua会自动添加?以及后面的参数，例如：
+--
+-- 如果用户设置了url，注意：仅传入完整url的前半部分(如果有参数，即传入?前一部分)，http.lua会自动添加?以及后面的参数，例如：
 --
 -- 设置的url="www.userserver.com/api/site/firmware_upgrade"，则http.lua会在此url后面补充下面的参数
 --
