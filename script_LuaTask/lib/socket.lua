@@ -116,7 +116,7 @@ end
 --
 --     caCert = "ca.crt", --CA证书文件(Base64编码 X.509格式)，如果存在此参数，则表示客户端会对服务器的证书进行校验
 --
---     clientCert = "client.crt", --客户端证书文件(Base64编码 X.509格式)，如果存在此参数，则表示服务器会对客户端的证书进行校验
+--     clientCert = "client.crt", --客户端证书文件(Base64编码 X.509格式)，服务器对客户端的证书进行校验时会用到此参数
 --
 --     clientKey = "client.key", --客户端私钥文件(Base64编码 X.509格式)
 --
