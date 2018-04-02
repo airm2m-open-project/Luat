@@ -9,7 +9,7 @@ require"utils"
 module(..., package.seeall)
 
 --[[
--- url格式(除hostname外，其余字段可选；目前的实现不支持auth和hash)
+-- url格式(除hostname外，其余字段可选；目前的实现不支持hash)
 --
 -- ├──────────┬┬───────────┬─────────────────┬───────────────────────────┬───────┤
 --
@@ -23,7 +23,7 @@ module(..., package.seeall)
 --
 -- │          ││           │          │      │          │ │    query     │       │
 --
--- "  http:   // user:pass @ host.com : 8080   /p/a/t/h  ?  query=string   #hash "
+-- "http[s]:  // user:pass @ host.com : 8080   /p/a/t/h  ?  query=string   #hash "
 --
 -- │          ││           │          │      │          │ │              │       │
 --
@@ -44,7 +44,7 @@ local function receive(client,timeout,cbFnc)
     return result,data
 end
 
-local function taskClient(method,protocal,host,port,path,cert,head,body,timeout,cbFnc,rcvFilePath)
+local function taskClient(method,protocal,auth,host,port,path,cert,head,body,timeout,cbFnc,rcvFilePath)
     while not socket.isReady() do
         if not sys.waitUntil("IP_READY_IND",timeout) then return response(nil,cbFnc,false,"network not ready") end
     end
@@ -66,6 +66,7 @@ local function taskClient(method,protocal,host,port,path,cert,head,body,timeout,
     if not heads.Host then heads["Host"] = host end
     if not heads.Connection then heads["Connection"] = "short" end
     if bodyLen>0 and bodyLen~=tonumber(heads["Content-Length"] or "0") then heads["Content-Length"] = bodyLen end
+    if auth~="" and not heads.Authorization then heads["Authorization"] = ("Basic "..crypto.base64_encode(auth,#auth)) end
     local headStr = ""
     for k,v in pairs(heads) do
         headStr = headStr..k..": "..v.."\r\n"
@@ -265,13 +266,13 @@ end
 -- @usage http.request("POST","www.test.com/report.html",nil,{Head1="ValueData1",Head2="ValueData2"},{[1]="string1",[2] ={file="/ldata/test.jpg"},[3]="string2"},30000,cbFnc)
 -- @usage http.request("GET","https://www.baidu.com",{caCert="ca.crt"})
 function request(method,url,cert,head,body,timeout,cbFnc,rcvFileName)
-    local protocal,user,password,hostName,port,path,d1,d2,offset,rcvFilePath
+    local protocal,auth,hostName,port,path,d1,d2,offset,rcvFilePath
 
     d1,d2,protocal = url:find("^(%a+)://")
     if not protocal then protocal = "http" end
     offset = d2 or 0
 
-    d1,d2,user,password = url:find("(.-):(.-)@",offset+1)
+    d1,d2,auth = url:find("(.-:.-)@",offset+1)
     offset = d2 or offset
 
     if url:match(":(%d+)",offset+1) then
@@ -296,7 +297,7 @@ function request(method,url,cert,head,body,timeout,cbFnc,rcvFileName)
         rcvFilePath = "/http_down/"..rcvFileName
     end
     
-    sys.taskInit(taskClient,method,protocal,hostName,port,path=="" and "/" or path,cert,head,body or "",timeout or 30000,cbFnc,rcvFilePath or rcvFileName)
+    sys.taskInit(taskClient,method,protocal,auth or "",hostName,port,path=="" and "/" or path,cert,head,body or "",timeout or 30000,cbFnc,rcvFilePath or rcvFileName)
     
     return rcvFilePath or rcvFileName
 end
