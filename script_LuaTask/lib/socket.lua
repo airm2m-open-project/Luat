@@ -188,7 +188,7 @@ function mt.__index:connect(address, port)
         return false
     end
     
-    if cc and cc.anycallexist() then
+    if cc and cc.anyCallExist() then
         log.info("socket:connect: call exist, cannot connect")
         return false
     end
