@@ -50,3 +50,26 @@ http.request("GET","www.lua.org",nil,nil,nil,nil,cbFnc)
 --http.request("GET","www.lua.org:80/about.html",nil,nil,nil,30000,cbFnc)
 --http.request("POST","www.iciba.com",nil,nil,"Luat",30000,cbFnc)
 --http.request("POST","36.7.87.100:6500",nil,{head1="value1"},{[1]="begin\r\n",[2]={file="/lua/http.lua"},[3]="end\r\n"},30000,cbFnc)
+
+--[[
+-- url格式(除hostname外，其余字段可选；目前的实现不支持hash)
+--
+-- ├──────────┬┬───────────┬─────────────────┬───────────────────────────┬───────┤
+--
+-- │ protocol ││   auth    │      host       │           path            │ hash  │
+--
+-- │          ││           ├──────────┬──────┼──────────┬────────────────┤       │
+--
+-- │          ││           │ hostname │ port │ pathname │     search     │       │
+--
+-- │          ││           │          │      │          ├─┬──────────────┤       │
+--
+-- │          ││           │          │      │          │ │    query     │       │
+--
+-- "http[s]:  // user:pass @ host.com : 8080   /p/a/t/h  ?  query=string   #hash "
+--
+-- │          ││           │          │      │          │ │              │       │
+--
+-- └──────────┴┴───────────┴──────────┴──────┴──────────┴─┴──────────────┴───────┘
+]]
+
