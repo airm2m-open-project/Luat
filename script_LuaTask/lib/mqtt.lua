@@ -217,8 +217,11 @@ function mqttc:read(timeout)
         elseif s == "timeout" then -- 超时，判断是否需要发送心跳包
             if not self:checkKeepAlive() then
                 return false
+            elseif timeout <= recvTimeout then
+                return false, "timeout"
+            else
+                timeout = timeout - recvTimeout
             end
-            return false, "timeout"
         else -- 其他错误直接返回
             return r, s
         end
@@ -226,7 +229,9 @@ function mqttc:read(timeout)
         if packet then
             self.lastIOTime = os.time()
             self.inbuf = string.sub(self.inbuf, nextpos)
-            return true, packet
+            if packet.id ~= PINGRESP then
+                return true, packet
+            end
         end
     end
 end
