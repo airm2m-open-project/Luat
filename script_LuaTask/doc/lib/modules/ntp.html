@@ -1,3 +1,4 @@
+return [==[
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
@@ -122,146 +123,146 @@
     <dl class="function">
     <dt>
     <a name = "getServers"></a>
-    <strong>getServers ()</strong>
+    <strong  style="color: red;">getServers ()</strong>
     </dt>
     <dd>
-    获取NTP服务器地址列表
+    <pre class="example">获取NTP服务器地址列表</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        table,服务器地址列表
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">table,服务器地址列表</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"><span class="keyword">local</span> addtable = ntp.getServers()</pre>
+        <li><pre class="example"><span class="keyword">local</span> addtable = ntp.getServers()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "setServers"></a>
-    <strong>setServers (st)</strong>
+    <strong  style="color: red;">setServers (st)</strong>
     </dt>
     <dd>
-    设置NTP服务器地址列表
+    <pre class="example">设置NTP服务器地址列表</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">st</span>
-        ,tab类型，服务器地址列表
+        <pre class="example">tab类型，服务器地址列表</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        无
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">无</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">ntp.getServers({<span class="string">"1edu.ntp.org.cn"</span>,<span class="string">"cn.ntp.org.cn"</span>})</pre>
+        <li><pre class="example">ntp.getServers({<span class="string">"1edu.ntp.org.cn"</span>,<span class="string">"cn.ntp.org.cn"</span>})</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "isEnd"></a>
-    <strong>isEnd ()</strong>
+    <strong  style="color: red;">isEnd ()</strong>
     </dt>
     <dd>
-    NTP同步标志
+    <pre class="example">NTP同步标志</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        boole,NTP的同步状态true为成功,fasle为失败
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">boole,NTP的同步状态true为成功,fasle为失败</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"><span class="keyword">local</span> sta = ntp.isEnd()</pre>
+        <li><pre class="example"><span class="keyword">local</span> sta = ntp.isEnd()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "ntpTime"></a>
-    <strong>ntpTime (ts, fnc)</strong>
+    <strong  style="color: red;">ntpTime (ts, fnc)</strong>
     </dt>
     <dd>
-    同步时间，每个NTP服务器尝试3次，超时8秒,适用于被任务函数调用
+    <pre class="example">同步时间，每个NTP服务器尝试3次，超时8秒,适用于被任务函数调用</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">ts</span>
-        ,每隔ts小时同步1次
+        <pre class="example">每隔ts小时同步1次</pre>
         </li>
         <li><span class="parameter">fnc</span>
-        ,同步成功后回调函数
+        <pre class="example">同步成功后回调函数</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        无
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">无</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <li><pre class="example">ntp.ntpTime() <span class="comment">-- 只同步1次</span></pre></li>
-        <li><pre class="example">ntp.ntpTime(<span class="number">1</span>) <span class="comment">-- 1小时同步1次</span></pre></li>
-        <li><pre class="example">ntp.ntpTime(<span class="keyword">nil</span>,fnc) <span class="comment">-- 只同步1次，同步成功后执行fnc()</span></pre></li>
-        <li><pre class="example">ntp.ntpTime(<span class="number">24</span>,fnc) <span class="comment">-- 24小时同步1次，同步成功后执行fnc()</span></pre></li>
+        <li><pre class="example">ntp.ntpTime() <span class="comment">-- 只同步1次</span></pre></il>
+        <li><pre class="example">ntp.ntpTime(<span class="number">1</span>) <span class="comment">-- 1小时同步1次</span></pre></il>
+        <li><pre class="example">ntp.ntpTime(<span class="keyword">nil</span>,fnc) <span class="comment">-- 只同步1次，同步成功后执行fnc()</span></pre></il>
+        <li><pre class="example">ntp.ntpTime(<span class="number">24</span>,fnc) <span class="comment">-- 24小时同步1次，同步成功后执行fnc()</span></pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "timeSync"></a>
-    <strong>timeSync (ts, fnc)</strong>
+    <strong  style="color: red;">timeSync (ts, fnc)</strong>
     </dt>
     <dd>
-    自动同步时间任务适合独立执行
+    <pre class="example">自动同步时间任务适合独立执行</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">ts</span>
-        ,每隔ts小时同步1次
+        <pre class="example">每隔ts小时同步1次</pre>
         </li>
         <li><span class="parameter">fnc</span>
-        ,同步成功后回调函数
+        <pre class="example">同步成功后回调函数</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        无
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">无</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <li><pre class="example">ntp.timeSync() <span class="comment">-- 只同步1次</span></pre></li>
-        <li><pre class="example">ntp.timeSync(<span class="number">1</span>) <span class="comment">-- 1小时同步1次</span></pre></li>
-        <li><pre class="example">ntp.timeSync(<span class="keyword">nil</span>,fnc) <span class="comment">-- 只同步1次，同步成功后执行fnc()</span></pre></li>
-        <li><pre class="example">ntp.timeSync(<span class="number">24</span>,fnc) <span class="comment">-- 24小时同步1次，同步成功后执行fnc()</span></pre></li>
+        <li><pre class="example">ntp.timeSync() <span class="comment">-- 只同步1次</span></pre></il>
+        <li><pre class="example">ntp.timeSync(<span class="number">1</span>) <span class="comment">-- 1小时同步1次</span></pre></il>
+        <li><pre class="example">ntp.timeSync(<span class="keyword">nil</span>,fnc) <span class="comment">-- 只同步1次，同步成功后执行fnc()</span></pre></il>
+        <li><pre class="example">ntp.timeSync(<span class="number">24</span>,fnc) <span class="comment">-- 24小时同步1次，同步成功后执行fnc()</span></pre></il>
     </ul>
 
 </dd>
@@ -272,8 +273,10 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-04-03 13:28:21 </i>
+<i style="float:right;">Last updated 2018-04-03 17:47:48 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
 </html>
+]==]
+

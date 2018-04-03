@@ -1,3 +1,4 @@
+return [==[
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
@@ -134,245 +135,245 @@
     <dl class="function">
     <dt>
     <a name = "anyCallExist"></a>
-    <strong>anyCallExist ()</strong>
+    <strong  style="color: red;">anyCallExist ()</strong>
     </dt>
     <dd>
-    是否存在通话
+    <pre class="example">是否存在通话</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        result 存在通话返回true，否则返回false
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">result 存在通话返回true，否则返回false</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">result = cc.anyCallExist()</pre>
+        <li><pre class="example">result = cc.anyCallExist()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "getState"></a>
-    <strong>getState (num)</strong>
+    <strong  style="color: red;">getState (num)</strong>
     </dt>
     <dd>
-    查询某个号码的通话状态
+    <pre class="example">查询某个号码的通话状态</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">num</span>
-         查询号码
+        <pre class="example"> 查询号码</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        state 通话状态，状态值参考本模块定义
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">state 通话状态，状态值参考本模块定义</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">state = cc.getState(<span class="string">'10086'</span>)</pre>
+        <li><pre class="example">state = cc.getState(<span class="string">'10086'</span>)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "dial"></a>
-    <strong>dial (number, delay)</strong>
+    <strong  style="color: red;">dial (number, delay)</strong>
     </dt>
     <dd>
-    拨号
+    <pre class="example">拨号</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">number</span>
-         号码
+        <pre class="example"> 号码</pre>
         </li>
         <li><span class="parameter">delay</span>
-         延时delay毫秒后，才发送at命令呼叫，默认不延时
+        <pre class="example"> 延时delay毫秒后，才发送at命令呼叫，默认不延时</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        result true表示允许发送at命令拨号并且发送at，false表示不允许at命令拨号
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">result true表示允许发送at命令拨号并且发送at，false表示不允许at命令拨号</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">cc.dial(<span class="string">'10086'</span>)</pre>
+        <li><pre class="example">cc.dial(<span class="string">'10086'</span>)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "hangUp"></a>
-    <strong>hangUp (num)</strong>
+    <strong  style="color: red;">hangUp (num)</strong>
     </dt>
     <dd>
-    挂断所有通话
+    <pre class="example">挂断所有通话</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">num</span>
-         号码，若指定号码通话状态不对 则直接退出 不会执行挂断，若挂断时会挂断所有电话
+        <pre class="example"> 号码，若指定号码通话状态不对 则直接退出 不会执行挂断，若挂断时会挂断所有电话</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-
-    </ol>
+    <ul>
+        <li>
+        <pre class="example"></pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">cc.hangUp(<span class="string">'10086'</span>)</pre>
+        <li><pre class="example">cc.hangUp(<span class="string">'10086'</span>)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "accept"></a>
-    <strong>accept (num)</strong>
+    <strong  style="color: red;">accept (num)</strong>
     </dt>
     <dd>
-    接听电话
+    <pre class="example">接听电话</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">num</span>
-         号码，若指定号码通话状态不对 则直接退出 不会接通
+        <pre class="example"> 号码，若指定号码通话状态不对 则直接退出 不会接通</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-
-    </ol>
+    <ul>
+        <li>
+        <pre class="example"></pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">cc.accept(<span class="string">'10086'</span>)</pre>
+        <li><pre class="example">cc.accept(<span class="string">'10086'</span>)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "transvoice"></a>
-    <strong>transvoice (data, loop, loop2)</strong>
+    <strong  style="color: red;">transvoice (data, loop, loop2)</strong>
     </dt>
     <dd>
-    通话中发送声音到对端,必须是12.2K AMR格式
+    <pre class="example">通话中发送声音到对端,必须是12.2K AMR格式</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">data</span>
-
+        <pre class="example"></pre>
         </li>
         <li><span class="parameter">loop</span>
-
+        <pre class="example"></pre>
         </li>
         <li><span class="parameter">loop2</span>
-
+        <pre class="example"></pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        result true为成功，false为失败
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">result true为成功，false为失败</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"></pre>
+        <li><pre class="example"></pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "dtmfDetect"></a>
-    <strong>dtmfDetect (enable, sens)</strong>
+    <strong  style="color: red;">dtmfDetect (enable, sens)</strong>
     </dt>
     <dd>
-    设置dtmf检测是否使能以及灵敏度
+    <pre class="example">设置dtmf检测是否使能以及灵敏度</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">enable</span>
-         true使能，false或者nil为不使能
+        <pre class="example"> true使能，false或者nil为不使能</pre>
         </li>
         <li><span class="parameter">sens</span>
-         灵敏度，默认3，最灵敏为1
+        <pre class="example"> 灵敏度，默认3，最灵敏为1</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-
-    </ol>
+    <ul>
+        <li>
+        <pre class="example"></pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">cc.dtmfDetect(<span class="keyword">true</span>)</pre>
+        <li><pre class="example">cc.dtmfDetect(<span class="keyword">true</span>)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "sendDtmf"></a>
-    <strong>sendDtmf (str, playtime, intvl)</strong>
+    <strong  style="color: red;">sendDtmf (str, playtime, intvl)</strong>
     </dt>
     <dd>
-    发送dtmf到对端
+    <pre class="example">发送dtmf到对端</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">str</span>
-         dtmf字符串
+        <pre class="example"> dtmf字符串</pre>
         </li>
         <li><span class="parameter">playtime</span>
-         每个dtmf播放时间，单位毫秒，默认100
+        <pre class="example"> 每个dtmf播放时间，单位毫秒，默认100</pre>
         </li>
         <li><span class="parameter">intvl</span>
-         两个dtmf间隔，单位毫秒，默认100
+        <pre class="example"> 两个dtmf间隔，单位毫秒，默认100</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        无
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">无</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">cc.sendDtmf(<span class="string">"123"</span>)</pre>
+        <li><pre class="example">cc.sendDtmf(<span class="string">"123"</span>)</pre></il>
     </ul>
 
 </dd>
@@ -383,8 +384,10 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-04-03 13:28:21 </i>
+<i style="float:right;">Last updated 2018-04-03 17:47:48 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
 </html>
+]==]
+

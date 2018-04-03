@@ -1,3 +1,4 @@
+return [==[
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
@@ -146,348 +147,348 @@
     <dl class="function">
     <dt>
     <a name = "string.toHex"></a>
-    <strong>string.toHex (str)</strong>
+    <strong  style="color: red;">string.toHex (str)</strong>
     </dt>
     <dd>
-    字符转16进制,如"123abc"转为"313233616263"
+    <pre class="example">字符转16进制,如"123abc"转为"313233616263"</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">str</span>
-         输入字符串
+        <pre class="example"> 输入字符串</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
         <li>
-        hexstring 16进制组成的串</li>
+        <pre class="example">hexstring 16进制组成的串</pre></li>
         <li>
-        len 输入的字符串长度</li>
+        <pre class="example">len 输入的字符串长度</pre></li>
     </ol>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"><span class="global">string</span>.toHex(<span class="string">"\1\2\3"</span>) -&gt; <span class="string">"010203"</span> <span class="number">3</span>
-<span class="global">string</span>.toHex(<span class="string">"123abc"</span>) -&gt; <span class="string">"313233616263"</span> <span class="number">6</span></pre>
+        <li><pre class="example"><span class="global">string</span>.toHex(<span class="string">"\1\2\3"</span>) -&gt; <span class="string">"010203"</span> <span class="number">3</span>
+<span class="global">string</span>.toHex(<span class="string">"123abc"</span>) -&gt; <span class="string">"313233616263"</span> <span class="number">6</span></pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "string.fromHex"></a>
-    <strong>string.fromHex (hex)</strong>
+    <strong  style="color: red;">string.fromHex (hex)</strong>
     </dt>
     <dd>
-    16进制转字符，如"313233616263"转为"123abc", 函数里加入了过滤分隔符，可以过滤掉大部分分隔符（可参见正则表达式中\s和\p的范围）。
+    <pre class="example">16进制转字符，如"313233616263"转为"123abc", 函数里加入了过滤分隔符，可以过滤掉大部分分隔符（可参见正则表达式中\s和\p的范围）。</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">hex</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        ,16进制组成的串
+        <pre class="example">16进制组成的串</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
     <ol>
         <li>
-        charstring,字符组成的串</li>
+        <pre class="example">charstring,字符组成的串</pre></li>
         <li>
-        len,输出字符串的长度</li>
+        <pre class="example">len,输出字符串的长度</pre></li>
     </ol>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"><span class="global">string</span>.fromHex(<span class="string">"010203"</span>)       -&gt;  <span class="string">"\1\2\3"</span>
-<span class="global">string</span>.fromHex(<span class="string">"313233616263:) -&gt;  "</span><span class="number">123</span>abc"</pre>
+        <li><pre class="example"><span class="global">string</span>.fromHex(<span class="string">"010203"</span>)       -&gt;  <span class="string">"\1\2\3"</span>
+<span class="global">string</span>.fromHex(<span class="string">"313233616263:) -&gt;  "</span><span class="number">123</span>abc"</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "string.utf8Len"></a>
-    <strong>string.utf8Len (str)</strong>
+    <strong  style="color: red;">string.utf8Len (str)</strong>
     </dt>
     <dd>
-    返回utf8编码字符串的长度
+    <pre class="example">返回utf8编码字符串的长度</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">str</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        ,utf8编码的字符串,支持中文
+        <pre class="example">utf8编码的字符串,支持中文</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        number,返回字符串长度
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">number,返回字符串长度</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"><span class="keyword">local</span> cnt = <span class="global">string</span>.utf8Len(<span class="string">"中国"</span>),str = <span class="number">2</span></pre>
+        <li><pre class="example"><span class="keyword">local</span> cnt = <span class="global">string</span>.utf8Len(<span class="string">"中国"</span>),str = <span class="number">2</span></pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "string.urlEncode"></a>
-    <strong>string.urlEncode (str)</strong>
+    <strong  style="color: red;">string.urlEncode (str)</strong>
     </dt>
     <dd>
-    返回字符串的urlEncode编码
+    <pre class="example">返回字符串的urlEncode编码</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">str</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        ，要转换编码的字符串
+        <pre class="example">要转换编码的字符串</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        str,urlEncode编码的字符串
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">str,urlEncode编码的字符串</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"><span class="global">string</span>.urlEncode(<span class="string">"####133"</span>)</pre>
+        <li><pre class="example"><span class="global">string</span>.urlEncode(<span class="string">"####133"</span>)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "string.formatNumberThousands"></a>
-    <strong>string.formatNumberThousands (num)</strong>
+    <strong  style="color: red;">string.formatNumberThousands (num)</strong>
     </dt>
     <dd>
-    返回数字的千位符号格式
+    <pre class="example">返回数字的千位符号格式</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">num</span>
             <span class="types"><span class="type">number</span></span>
-        ,数字
+        <pre class="example">数字</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        string，千位符号的数字字符串
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">string，千位符号的数字字符串</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">loca s = <span class="global">string</span>.formatNumberThousands(<span class="number">1000</span>) ,s = <span class="string">"1,000"</span></pre>
+        <li><pre class="example">loca s = <span class="global">string</span>.formatNumberThousands(<span class="number">1000</span>) ,s = <span class="string">"1,000"</span></pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "string.split"></a>
-    <strong>string.split (str, delimiter)</strong>
+    <strong  style="color: red;">string.split (str, delimiter)</strong>
     </dt>
     <dd>
-    按照指定分隔符分割字符串
+    <pre class="example">按照指定分隔符分割字符串</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">str</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         输入字符串
+        <pre class="example"> 输入字符串</pre>
         </li>
         <li><span class="parameter">delimiter</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         分隔符
+        <pre class="example"> 分隔符</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        分割后的字符串列表
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">分割后的字符串列表</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"><span class="string">"123,456,789"</span>:split(<span class="string">','</span>) -&gt; {<span class="string">'123'</span>,<span class="string">'456'</span>,<span class="string">'789'</span>}</pre>
+        <li><pre class="example"><span class="string">"123,456,789"</span>:split(<span class="string">','</span>) -&gt; {<span class="string">'123'</span>,<span class="string">'456'</span>,<span class="string">'789'</span>}</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "io.exists"></a>
-    <strong>io.exists (path)</strong>
+    <strong  style="color: red;">io.exists (path)</strong>
     </dt>
     <dd>
-    判断文件是否存在
+    <pre class="example">判断文件是否存在</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">path</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        ,文件全名例如："/ldata/call.mp3"
+        <pre class="example">文件全名例如："/ldata/call.mp3"</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        boole,存在为true,不存在为false
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">boole,存在为true,不存在为false</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"><span class="keyword">local</span> ex = <span class="global">io</span>.exists(<span class="string">"/ldata/call.mp3"</span>)</pre>
+        <li><pre class="example"><span class="keyword">local</span> ex = <span class="global">io</span>.exists(<span class="string">"/ldata/call.mp3"</span>)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "io.readFile"></a>
-    <strong>io.readFile (path)</strong>
+    <strong  style="color: red;">io.readFile (path)</strong>
     </dt>
     <dd>
-    读取文件并返回文件的内容
+    <pre class="example">读取文件并返回文件的内容</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">path</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        ,文件全名例如："/ldata/call.txt"
+        <pre class="example">文件全名例如："/ldata/call.txt"</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        string,文件的内容,文件不存在返回nil
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">string,文件的内容,文件不存在返回nil</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"><span class="keyword">local</span> c = <span class="global">io</span>.readFile(<span class="string">"/ldata/call.txt"</span>)</pre>
+        <li><pre class="example"><span class="keyword">local</span> c = <span class="global">io</span>.readFile(<span class="string">"/ldata/call.txt"</span>)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "io.writeFile"></a>
-    <strong>io.writeFile (path, content, mode)</strong>
+    <strong  style="color: red;">io.writeFile (path, content, mode)</strong>
     </dt>
     <dd>
-    写入文件指定的内容,默认为覆盖二进制模式
+    <pre class="example">写入文件指定的内容,默认为覆盖二进制模式</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">path</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        ,文件全名例如："/ldata/call.txt"
+        <pre class="example">文件全名例如："/ldata/call.txt"</pre>
         </li>
         <li><span class="parameter">content</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        ,文件内容
+        <pre class="example">文件内容</pre>
         </li>
         <li><span class="parameter">mode</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        ,文件写入模式默认"w+b"
+        <pre class="example">文件写入模式默认"w+b"</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        string,文件的内容
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">string,文件的内容</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"><span class="keyword">local</span> c = <span class="global">io</span>.writeFile(<span class="string">"/ldata/call.txt"</span>,<span class="string">"test"</span>)</pre>
+        <li><pre class="example"><span class="keyword">local</span> c = <span class="global">io</span>.writeFile(<span class="string">"/ldata/call.txt"</span>,<span class="string">"test"</span>)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "io.pathInfo"></a>
-    <strong>io.pathInfo (path)</strong>
+    <strong  style="color: red;">io.pathInfo (path)</strong>
     </dt>
     <dd>
-    将文件路径分解为table信息
+    <pre class="example">将文件路径分解为table信息</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">path</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        ,文件路径全名例如:"/ldata/call.txt"
+        <pre class="example">文件路径全名例如:"/ldata/call.txt"</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        table,{dirname="/ldata/",filename="call.txt",basename="call",extname=".txt"}
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">table,{dirname="/ldata/",filename="call.txt",basename="call",extname=".txt"}</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">loca p = <span class="global">io</span>.pathInfo(<span class="string">"/ldata/call.txt"</span>)</pre>
+        <li><pre class="example">loca p = <span class="global">io</span>.pathInfo(<span class="string">"/ldata/call.txt"</span>)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "io.fileSize"></a>
-    <strong>io.fileSize (path)</strong>
+    <strong  style="color: red;">io.fileSize (path)</strong>
     </dt>
     <dd>
-    返回文件大小
+    <pre class="example">返回文件大小</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">path</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        ,文件路径全名例如:"/ldata/call.txt","test"
+        <pre class="example">文件路径全名例如:"/ldata/call.txt","test"</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        number ,文件大小
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">number ,文件大小</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">locan cnt = <span class="global">io</span>.fileSize(<span class="string">"/ldata/call.txt"</span>)</pre>
+        <li><pre class="example">locan cnt = <span class="global">io</span>.fileSize(<span class="string">"/ldata/call.txt"</span>)</pre></il>
     </ul>
 
 </dd>
@@ -498,8 +499,10 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-04-03 13:28:21 </i>
+<i style="float:right;">Last updated 2018-04-03 17:47:48 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
 </html>
+]==]
+

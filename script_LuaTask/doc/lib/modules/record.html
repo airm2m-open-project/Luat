@@ -1,3 +1,4 @@
+return [==[
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
@@ -134,42 +135,42 @@
     <dl class="function">
     <dt>
     <a name = "start"></a>
-    <strong>start (seconds, cb)</strong>
+    <strong  style="color: red;">start (seconds, cb)</strong>
     </dt>
     <dd>
-    开始录音
+    <pre class="example">开始录音</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">seconds</span>
-         录音时长，单位：秒
+        <pre class="example"> 录音时长，单位：秒</pre>
         </li>
         <li><span class="parameter">cb</span>
-         录音结果回调
+        <pre class="example"> 录音结果回调</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        result true - 开始录音 其他 - 失败
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">result true - 开始录音 其他 - 失败</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">result = record.start()</pre>
+        <li><pre class="example">result = record.start()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "stop"></a>
-    <strong>stop ()</strong>
+    <strong  style="color: red;">stop ()</strong>
     </dt>
     <dd>
-    停止录音
+    <pre class="example">停止录音</pre>
 
 
 
@@ -178,96 +179,96 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">record.stop()</pre>
+        <li><pre class="example">record.stop()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "getFilePath"></a>
-    <strong>getFilePath ()</strong>
+    <strong  style="color: red;">getFilePath ()</strong>
     </dt>
     <dd>
-    读取录音文件的完整路径
+    <pre class="example">读取录音文件的完整路径</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        string 录音文件的完整路径
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">string 录音文件的完整路径</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">filePath = record.getFilePath()</pre>
+        <li><pre class="example">filePath = record.getFilePath()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "getData"></a>
-    <strong>getData (offset, len)</strong>
+    <strong  style="color: red;">getData (offset, len)</strong>
     </dt>
     <dd>
-    读取录音数据
+    <pre class="example">读取录音数据</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">offset</span>
-         偏移位置
+        <pre class="example"> 偏移位置</pre>
         </li>
         <li><span class="parameter">len</span>
-         长度
+        <pre class="example"> 长度</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        data 录音数据
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">data 录音数据</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">data = record.getData(<span class="number">0</span>, <span class="number">1024</span>)</pre>
+        <li><pre class="example">data = record.getData(<span class="number">0</span>, <span class="number">1024</span>)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "getSize"></a>
-    <strong>getSize ()</strong>
+    <strong  style="color: red;">getSize ()</strong>
     </dt>
     <dd>
-    读取录音文件总长度，录音时长
+    <pre class="example">读取录音文件总长度，录音时长</pre>
 
 
 
     <h3>Returns:</h3>
     <ol>
         <li>
-        fileSize 录音文件大小</li>
+        <pre class="example">fileSize 录音文件大小</pre></li>
         <li>
-        duration 录音时长</li>
+        <pre class="example">duration 录音时长</pre></li>
     </ol>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">fileSize, duration = record.getSize()</pre>
+        <li><pre class="example">fileSize, duration = record.getSize()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "delete"></a>
-    <strong>delete ()</strong>
+    <strong  style="color: red;">delete ()</strong>
     </dt>
     <dd>
-    删除录音
+    <pre class="example">删除录音</pre>
 
 
 
@@ -276,53 +277,53 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">record.delete()</pre>
+        <li><pre class="example">record.delete()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "exists"></a>
-    <strong>exists ()</strong>
+    <strong  style="color: red;">exists ()</strong>
     </dt>
     <dd>
-    判断是否存在录音
+    <pre class="example">判断是否存在录音</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        result true - 有录音 false - 无录音
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">result true - 有录音 false - 无录音</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">result = record.exists()</pre>
+        <li><pre class="example">result = record.exists()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "isBusy"></a>
-    <strong>isBusy ()</strong>
+    <strong  style="color: red;">isBusy ()</strong>
     </dt>
     <dd>
-    是否正在处理录音
+    <pre class="example">是否正在处理录音</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        result true - 正在处理 false - 空闲
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">result true - 正在处理 false - 空闲</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">result = record.isBusy()</pre>
+        <li><pre class="example">result = record.isBusy()</pre></il>
     </ul>
 
 </dd>
@@ -333,8 +334,10 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-04-03 13:28:21 </i>
+<i style="float:right;">Last updated 2018-04-03 17:47:48 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
 </html>
+]==]
+

@@ -1,0 +1,6 @@
+1、安装LuaForWindows
+2、打开cmd，执行luarocks install penlight
+3、https://github.com/stevedonovan/LDoc下载ldoc源码
+4、脚本上一级目录下，新建一个config.ld
+5、打开cmd，执行ldoc.bat，ldoc.bat中会用到第3步的保存路径
+6、会自动创建一个doc目录，所有的html自动生成，运行index.html即可

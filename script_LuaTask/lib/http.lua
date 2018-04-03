@@ -211,30 +211,20 @@ local function taskClient(method,protocal,auth,host,port,path,cert,head,body,tim
 end
 
 --- 发送HTTP请求
--- @string method，HTTP请求方法
+-- @string method HTTP请求方法
 --
 -- 支持"GET"，"HEAD"，"POST"，"OPTIONS"，"PUT"，"DELETE"，"TRACE"，"CONNECT"
--- @string url，HTTP请求url
---
+-- @string url HTTP请求url
 -- url格式(除hostname外，其余字段可选；目前的实现不支持hash)
---
--- ├──────────┬┬┬───────────┬─────────────────┬───────────────────────────┬───────┤
---
--- │ protocol │││   auth    │      host       │           path            │ hash  │
---
--- │          │││           ├──────────┬──────┼──────────┬────────────────┤       │
---
--- │          │││           │ hostname │ port │ pathname │     search     │       │
---
--- │          │││           │          │      │          ├─┬──────────────┤       │
---
--- │          │││           │          │      │          │ │    query     │       │
---
--- "http[s]   :// user:pass @ host.com : 8080   /p/a/t/h  ?  query=string   #hash "
---
--- │          │││           │          │      │          │ │              │       │
---
--- └──────────┴┴┴───────────┴──────────┴──────┴──────────┴─┴──────────────┴───────┘
+-- |------------------------------------------------------------------------------|
+-- | protocol |||   auth    |      host       |           path            | hash  |
+-- |          |||           |-----------------|---------------------------|       |
+-- |          |||           | hostname | port | pathname |     search     |       |
+-- |          |||           |          |      |          |----------------|       |
+-- |          |||           |          |      |          | |    query     |       |
+-- " http[s]  :// user:pass @ host.com : 8080   /p/a/t/h  ?  query=string   #hash " 
+-- |          |||           |          |      |          | |              |       |
+-- |------------------------------------------------------------------------------|
 -- @param cert，table或者nil类型，ssl证书，当url为https类型时，此参数才有意义。参数格式参考socket模块中tcp接口的参数cert
 -- @tab head，nil或者table类型，自定义请求头
 --

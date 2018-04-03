@@ -1,3 +1,4 @@
+return [==[
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
@@ -170,37 +171,37 @@
     <dl class="function">
     <dt>
     <a name = "crsmResponse"></a>
-    <strong>crsmResponse (cmd, success, response, intermediate)</strong>
+    <strong  style="color: red;">crsmResponse (cmd, success, response, intermediate)</strong>
     </dt>
     <dd>
-    更新FPLMN的应答处理
+    <pre class="example">更新FPLMN的应答处理</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">cmd</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-          ,此应答对应的AT命令
+        <pre class="example">  ,此应答对应的AT命令</pre>
         </li>
         <li><span class="parameter">success</span>
             <span class="types"><span class="type">bool</span></span>
-         ,AT命令执行结果，true或者false
+        <pre class="example"> ,AT命令执行结果，true或者false</pre>
         </li>
         <li><span class="parameter">response</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         ,AT命令的应答中的执行结果字符串
+        <pre class="example"> ,AT命令的应答中的执行结果字符串</pre>
         </li>
         <li><span class="parameter">intermediate</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         ,AT命令的应答中的中间信息
+        <pre class="example"> ,AT命令的应答中的中间信息</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        无
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">无</pre></il>
+    </ul>
 
 
 
@@ -208,284 +209,284 @@
 </dd>
     <dt>
     <a name = "switchFly"></a>
-    <strong>switchFly (mode)</strong>
+    <strong  style="color: red;">switchFly (mode)</strong>
     </dt>
     <dd>
-    飞行模式开关
+    <pre class="example">飞行模式开关</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">mode</span>
             <span class="types"><span class="type">bool</span></span>
-        ，true:飞行模式开，false:飞行模式关
+        <pre class="example">true:飞行模式开，false:飞行模式关</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        无
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">无</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">net.switchFly(mode)</pre>
+        <li><pre class="example">net.switchFly(mode)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "getState"></a>
-    <strong>getState ()</strong>
+    <strong  style="color: red;">getState ()</strong>
     </dt>
     <dd>
-    获取GSM网络注册状态
+    <pre class="example">获取GSM网络注册状态</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        string ,GSM网络注册状态(INIT、REGISTERED、UNREGISTER)
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">string ,GSM网络注册状态(INIT、REGISTERED、UNREGISTER)</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">net.getState()</pre>
+        <li><pre class="example">net.getState()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "getMcc"></a>
-    <strong>getMcc ()</strong>
+    <strong  style="color: red;">getMcc ()</strong>
     </dt>
     <dd>
-    获取当前小区的mcc
+    <pre class="example">获取当前小区的mcc</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        string ,当前小区的mcc，如果还没有注册GSM网络，则返回sim卡的mcc
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">string ,当前小区的mcc，如果还没有注册GSM网络，则返回sim卡的mcc</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">net.getMcc()</pre>
+        <li><pre class="example">net.getMcc()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "getMnc"></a>
-    <strong>getMnc ()</strong>
+    <strong  style="color: red;">getMnc ()</strong>
     </dt>
     <dd>
-    获取当前小区的mnc
+    <pre class="example">获取当前小区的mnc</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        string ,当前小区的mnc，如果还没有注册GSM网络，则返回sim卡的mnc
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">string ,当前小区的mnc，如果还没有注册GSM网络，则返回sim卡的mnc</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">net.getMnc()</pre>
+        <li><pre class="example">net.getMnc()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "getLac"></a>
-    <strong>getLac ()</strong>
+    <strong  style="color: red;">getLac ()</strong>
     </dt>
     <dd>
-    获取当前位置区ID
+    <pre class="example">获取当前位置区ID</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        string ,当前位置区ID(16进制字符串，例如"18be")，如果还没有注册GSM网络，则返回""
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">string ,当前位置区ID(16进制字符串，例如"18be")，如果还没有注册GSM网络，则返回""</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">net.getLac()</pre>
+        <li><pre class="example">net.getLac()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "getCi"></a>
-    <strong>getCi ()</strong>
+    <strong  style="color: red;">getCi ()</strong>
     </dt>
     <dd>
-    获取当前小区ID
+    <pre class="example">获取当前小区ID</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        string ,当前小区ID(16进制字符串，例如"93e1")，如果还没有注册GSM网络，则返回""
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">string ,当前小区ID(16进制字符串，例如"93e1")，如果还没有注册GSM网络，则返回""</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">net.getCi()</pre>
+        <li><pre class="example">net.getCi()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "getRssi"></a>
-    <strong>getRssi ()</strong>
+    <strong  style="color: red;">getRssi ()</strong>
     </dt>
     <dd>
-    获取信号强度
+    <pre class="example">获取信号强度</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        number ,当前信号强度(取值范围0-31)
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">number ,当前信号强度(取值范围0-31)</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">net.getRssi()</pre>
+        <li><pre class="example">net.getRssi()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "getCell"></a>
-    <strong>getCell ()</strong>
+    <strong  style="color: red;">getCell ()</strong>
     </dt>
     <dd>
-    获取当前和临近小区以及信号强度的拼接字符串
+    <pre class="example">获取当前和临近小区以及信号强度的拼接字符串</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        string ,当前和临近小区以及信号强度的拼接字符串，例如：49234.30.49233.23.49232.18.
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">string ,当前和临近小区以及信号强度的拼接字符串，例如：49234.30.49233.23.49232.18.</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">net.getCell()</pre>
+        <li><pre class="example">net.getCell()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "getCellInfo"></a>
-    <strong>getCellInfo ()</strong>
+    <strong  style="color: red;">getCellInfo ()</strong>
     </dt>
     <dd>
-    获取当前和临近位置区、小区以及信号强度的拼接字符串
+    <pre class="example">获取当前和临近位置区、小区以及信号强度的拼接字符串</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        string ,当前和临近位置区、小区以及信号强度的拼接字符串，例如：6311.49234.30;6311.49233.23;6322.49232.18;
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">string ,当前和临近位置区、小区以及信号强度的拼接字符串，例如：6311.49234.30;6311.49233.23;6322.49232.18;</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">net.getCellInfo()</pre>
+        <li><pre class="example">net.getCellInfo()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "getCellInfoExt"></a>
-    <strong>getCellInfoExt ()</strong>
+    <strong  style="color: red;">getCellInfoExt ()</strong>
     </dt>
     <dd>
-    获取当前和临近位置区、小区、mcc、mnc、以及信号强度的拼接字符串
+    <pre class="example">获取当前和临近位置区、小区、mcc、mnc、以及信号强度的拼接字符串</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        string ,当前和临近位置区、小区、mcc、mnc、以及信号强度的拼接字符串，例如：460.01.6311.49234.30;460.01.6311.49233.23;460.02.6322.49232.18;
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">string ,当前和临近位置区、小区、mcc、mnc、以及信号强度的拼接字符串，例如：460.01.6311.49234.30;460.01.6311.49233.23;460.02.6322.49232.18;</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">net.getCellInfoExt()</pre>
+        <li><pre class="example">net.getCellInfoExt()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "getTa"></a>
-    <strong>getTa ()</strong>
+    <strong  style="color: red;">getTa ()</strong>
     </dt>
     <dd>
-    获取TA值
+    <pre class="example">获取TA值</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        string ,TA值
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">string ,TA值</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">net.getTa()</pre>
+        <li><pre class="example">net.getTa()</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "getMultiCell"></a>
-    <strong>getMultiCell (cb)</strong>
+    <strong  style="color: red;">getMultiCell (cb)</strong>
     </dt>
     <dd>
-    读取“当前和临近小区信息”
+    <pre class="example">读取“当前和临近小区信息”</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">cb</span>
-        ：回调函数，当读取到小区信息后，会调用此回调函数，调用形式为cb(cells)，其中cells为string类型，格式为：当前和临近位置区、小区、mcc、mnc、以及信号强度的拼接字符串，例如：460.01.6311.49234.30;460.01.6311.49233.23;460.02.6322.49232.18;
+        <pre class="example">回调函数，当读取到小区信息后，会调用此回调函数，调用形式为cb(cells)，其中cells为string类型，格式为：当前和临近位置区、小区、mcc、mnc、以及信号强度的拼接字符串，例如：460.01.6311.49234.30;460.01.6311.49233.23;460.02.6322.49232.18;</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        无
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">无</pre></il>
+    </ul>
 
 
 
@@ -493,118 +494,118 @@
 </dd>
     <dt>
     <a name = "cengQueryPoll"></a>
-    <strong>cengQueryPoll (period)</strong>
+    <strong  style="color: red;">cengQueryPoll (period)</strong>
     </dt>
     <dd>
-    查询基站信息(当前和临近小区信息)
+    <pre class="example">查询基站信息(当前和临近小区信息)</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">period</span>
             <span class="types"><span class="type">number</span></span>
-         查询间隔，单位毫秒
+        <pre class="example"> 查询间隔，单位毫秒</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        bool , true:查询成功，false:查询停止
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">bool , true:查询成功，false:查询停止</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <li><pre class="example">net.cengQueryPoll() <span class="comment">--查询1次</span></pre></li>
-        <li><pre class="example">net.cengQueryPoll(<span class="number">60000</span>) <span class="comment">--每分钟查询1次</span></pre></li>
+        <li><pre class="example">net.cengQueryPoll() <span class="comment">--查询1次</span></pre></il>
+        <li><pre class="example">net.cengQueryPoll(<span class="number">60000</span>) <span class="comment">--每分钟查询1次</span></pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "csqQueryPoll"></a>
-    <strong>csqQueryPoll (period)</strong>
+    <strong  style="color: red;">csqQueryPoll (period)</strong>
     </dt>
     <dd>
-    查询信号强度
+    <pre class="example">查询信号强度</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">period</span>
             <span class="types"><span class="type">number</span></span>
-         查询间隔，单位毫秒
+        <pre class="example"> 查询间隔，单位毫秒</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        bool , true:查询成功，false:查询停止
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">bool , true:查询成功，false:查询停止</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <li><pre class="example">net.csqQueryPoll() <span class="comment">--查询1次</span></pre></li>
-        <li><pre class="example">net.csqQueryPoll(<span class="number">60000</span>) <span class="comment">--每分钟查询1次</span></pre></li>
+        <li><pre class="example">net.csqQueryPoll() <span class="comment">--查询1次</span></pre></il>
+        <li><pre class="example">net.csqQueryPoll(<span class="number">60000</span>) <span class="comment">--每分钟查询1次</span></pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "startQueryAll"></a>
-    <strong>startQueryAll (...)</strong>
+    <strong  style="color: red;">startQueryAll (...)</strong>
     </dt>
     <dd>
-    查询信号强度和基站信息(飞行模式，简单模式会返回查询失败)
+    <pre class="example">查询信号强度和基站信息(飞行模式，简单模式会返回查询失败)</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">...</span>
             <span class="types"><span class="type">number</span></span>
-         查询周期,参数可变，参数为nil只查询1次，参数1是信号强度查询周期，参数2是基站查询周期
+        <pre class="example"> 查询周期,参数可变，参数为nil只查询1次，参数1是信号强度查询周期，参数2是基站查询周期</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        bool ，true：查询成功，false：查询停止
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">bool ，true：查询成功，false：查询停止</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <li><pre class="example">net.startQueryAll()</pre></li>
-        <li><pre class="example">net.startQueryAll(<span class="number">60000</span>) <span class="comment">-- 6分钟查询1次信号强度和基站信息</span></pre></li>
-        <li><pre class="example">net.startQueryAll(<span class="number">60000</span>,<span class="number">600000</span>) <span class="comment">-- 1分钟查询1次信号强度，10分钟查询1次基站信息</span></pre></li>
+        <li><pre class="example">net.startQueryAll()</pre></il>
+        <li><pre class="example">net.startQueryAll(<span class="number">60000</span>) <span class="comment">-- 6分钟查询1次信号强度和基站信息</span></pre></il>
+        <li><pre class="example">net.startQueryAll(<span class="number">60000</span>,<span class="number">600000</span>) <span class="comment">-- 1分钟查询1次信号强度，10分钟查询1次基站信息</span></pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "stopQueryAll"></a>
-    <strong>stopQueryAll ()</strong>
+    <strong  style="color: red;">stopQueryAll ()</strong>
     </dt>
     <dd>
-    停止查询信号强度和基站信息
+    <pre class="example">停止查询信号强度和基站信息</pre>
 
 
 
     <h3>Returns:</h3>
-    <ol>
-
-        无
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">无</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">net.stopQueryAll()</pre>
+        <li><pre class="example">net.stopQueryAll()</pre></il>
     </ul>
 
 </dd>
@@ -615,8 +616,10 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-04-03 13:28:21 </i>
+<i style="float:right;">Last updated 2018-04-03 17:47:48 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
 </html>
+]==]
+

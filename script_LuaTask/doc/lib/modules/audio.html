@@ -1,3 +1,4 @@
+return [==[
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
@@ -118,151 +119,151 @@
     <dl class="function">
     <dt>
     <a name = "play"></a>
-    <strong>play (priority, type, path, vol, cb, dup, dupInterval)</strong>
+    <strong  style="color: red;">play (priority, type, path, vol, cb, dup, dupInterval)</strong>
     </dt>
     <dd>
-    播放音频
+    <pre class="example">播放音频</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">priority</span>
             <span class="types"><span class="type">number</span></span>
-        ，音频优先级，数值越大，优先级越高
+        <pre class="example">音频优先级，数值越大，优先级越高</pre>
         </li>
         <li><span class="parameter">type</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        ，音频类型，目前仅支持"FILE"、"TTS"、"TTSCC"
+        <pre class="example">音频类型，目前仅支持"FILE"、"TTS"、"TTSCC"</pre>
         </li>
         <li><span class="parameter">path</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        ，音频文件路径，跟typ有关.
+        <pre class="example">音频文件路径，跟typ有关.
 <p>               typ为"FILE"时：表示音频文件路径
 <p>               typ为"TTS"时：表示要播放的UTF8格式的数据
-<p>               typ为"TTSCC"时：表示要播放给通话对端数据的UCS2十六进制字符串
+<p>               typ为"TTSCC"时：表示要播放给通话对端数据的UCS2十六进制字符串</pre>
         </li>
         <li><span class="parameter">vol</span>
             <span class="types"><span class="type">number</span></span>
-        ，播放音量，取值范围0到7
+        <pre class="example">播放音量，取值范围0到7</pre>
         </li>
         <li><span class="parameter">cb</span>
-        ，音频播放结束或者出错时的回调函数，回调时包含一个参数：0表示播放成功结束；1表示播放出错；2表示播放优先级不够，没有播放；3表示传入的参数出错；4表示被新的播放请求终止
+        <pre class="example">音频播放结束或者出错时的回调函数，回调时包含一个参数：0表示播放成功结束；1表示播放出错；2表示播放优先级不够，没有播放；3表示传入的参数出错；4表示被新的播放请求终止</pre>
         </li>
         <li><span class="parameter">dup</span>
             <span class="types"><span class="type">bool</span></span>
-        ，是否循环播放，true循环，false或者nil不循环
+        <pre class="example">是否循环播放，true循环，false或者nil不循环</pre>
         </li>
         <li><span class="parameter">dupInterval</span>
             <span class="types"><span class="type">number</span></span>
-        ，播放间隔(单位毫秒)，dup为true时，此值才有意义
+        <pre class="example">播放间隔(单位毫秒)，dup为true时，此值才有意义</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        调用成功返回true，否则返回nil
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">调用成功返回true，否则返回nil</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <li><pre class="example">audio.play(<span class="number">0</span>,<span class="string">"FILE"</span>,<span class="string">"/ldata/call.mp3"</span>)</pre></li>
-        <li><pre class="example">audio.play(<span class="number">0</span>,<span class="string">"FILE"</span>,<span class="string">"/ldata/call.mp3"</span>,<span class="number">7</span>)</pre></li>
-        <li><pre class="example">audio.play(<span class="number">0</span>,<span class="string">"FILE"</span>,<span class="string">"/ldata/call.mp3"</span>,<span class="number">7</span>,cbFnc)</pre></li>
-        <li><pre class="example">更多用法参考demo/audio/testAudio.lua</pre></li>
+        <li><pre class="example">audio.play(<span class="number">0</span>,<span class="string">"FILE"</span>,<span class="string">"/ldata/call.mp3"</span>)</pre></il>
+        <li><pre class="example">audio.play(<span class="number">0</span>,<span class="string">"FILE"</span>,<span class="string">"/ldata/call.mp3"</span>,<span class="number">7</span>)</pre></il>
+        <li><pre class="example">audio.play(<span class="number">0</span>,<span class="string">"FILE"</span>,<span class="string">"/ldata/call.mp3"</span>,<span class="number">7</span>,cbFnc)</pre></il>
+        <li><pre class="example">更多用法参考demo/audio/testAudio.lua</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "setVolume"></a>
-    <strong>setVolume (vol)</strong>
+    <strong  style="color: red;">setVolume (vol)</strong>
     </dt>
     <dd>
-    设置喇叭音量等级
+    <pre class="example">设置喇叭音量等级</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">vol</span>
             <span class="types"><span class="type">number</span></span>
-        ，音量值为0-7，0为静音
+        <pre class="example">音量值为0-7，0为静音</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        bool，设置成功返回true，失败返回false
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">bool，设置成功返回true，失败返回false</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">audio.setVolume(<span class="number">7</span>)</pre>
+        <li><pre class="example">audio.setVolume(<span class="number">7</span>)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "setMicVolume"></a>
-    <strong>setMicVolume (vol)</strong>
+    <strong  style="color: red;">setMicVolume (vol)</strong>
     </dt>
     <dd>
-    设置麦克音量等级
+    <pre class="example">设置麦克音量等级</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">vol</span>
             <span class="types"><span class="type">number</span></span>
-        ，音量值为0-15，0为静音
+        <pre class="example">音量值为0-15，0为静音</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        bool，设置成功返回true,失败返回false
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">bool，设置成功返回true,失败返回false</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">audio.setMicVolume(<span class="number">14</span>)</pre>
+        <li><pre class="example">audio.setMicVolume(<span class="number">14</span>)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "setStrategy"></a>
-    <strong>setStrategy (strategy)</strong>
+    <strong  style="color: red;">setStrategy (strategy)</strong>
     </dt>
     <dd>
-    设置优先级相同时的播放策略
+    <pre class="example">设置优先级相同时的播放策略</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">strategy</span>
             <span class="types"><span class="type">number</span></span>
-        ，优先级相同时的播放策略；0：表示继续播放正在播放的音频，忽略请求播放的新音频；1：表示停止正在播放的音频，播放请求播放的新音频
+        <pre class="example">优先级相同时的播放策略；0：表示继续播放正在播放的音频，忽略请求播放的新音频；1：表示停止正在播放的音频，播放请求播放的新音频</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        无
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">无</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <li><pre class="example">audio.setStrategy(<span class="number">0</span>)</pre></li>
-        <li><pre class="example">audio.setStrategy(<span class="number">1</span>)</pre></li>
+        <li><pre class="example">audio.setStrategy(<span class="number">0</span>)</pre></il>
+        <li><pre class="example">audio.setStrategy(<span class="number">1</span>)</pre></il>
     </ul>
 
 </dd>
@@ -273,8 +274,10 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-04-03 13:28:21 </i>
+<i style="float:right;">Last updated 2018-04-03 17:47:48 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
 </html>
+]==]
+

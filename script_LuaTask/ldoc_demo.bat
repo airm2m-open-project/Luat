@@ -1,1 +1,1 @@
-lua C:\LDoc\ldoc.lua -c config_demo.ld demo
+lua C:\LDoc\ldoc.lua -l ./ldoc_config -s ./ldoc_config/demo -c ./ldoc_config/config_demo.ld demo

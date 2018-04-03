@@ -1,3 +1,4 @@
+return [==[
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
@@ -118,56 +119,56 @@
     <dl class="function">
     <dt>
     <a name = "setStorage"></a>
-    <strong>setStorage (storage, cb)</strong>
+    <strong  style="color: red;">setStorage (storage, cb)</strong>
     </dt>
     <dd>
-    设置电话本存储区域
+    <pre class="example">设置电话本存储区域</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">storage</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        , 存储区域字符串，仅支持"ME"和"SM"
+        <pre class="example"> 存储区域字符串，仅支持"ME"和"SM"</pre>
         </li>
         <li><span class="parameter">cb</span>
-        , 设置后的回调函数
-<p> 回调方式为cb(result)，result为true表示成功，false或者nil表示失败
+        <pre class="example"> 设置后的回调函数
+<p> 回调方式为cb(result)，result为true表示成功，false或者nil表示失败</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        无
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">无</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">pb.setStorage(storage,cb)</pre>
+        <li><pre class="example">pb.setStorage(storage,cb)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "read"></a>
-    <strong>read (index, cb)</strong>
+    <strong  style="color: red;">read (index, cb)</strong>
     </dt>
     <dd>
-    读取一条电话本记录
+    <pre class="example">读取一条电话本记录</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">index</span>
             <span class="types"><span class="type">number</span></span>
-        ，电话本在存储区的位置
+        <pre class="example">电话本在存储区的位置</pre>
         </li>
         <li><span class="parameter">cb</span>
             <span class="types"><span class="type">func</span></span>
-        ，function类型，读取后的回调函数
-<p> 回调方式为cb(result,name,number)：result为true表示成功，false或者nil表示失败；name为姓名；number为号码
+        <pre class="example">function类型，读取后的回调函数
+<p> 回调方式为cb(result,name,number)：result为true表示成功，false或者nil表示失败；name为姓名；number为号码</pre>
         </li>
     </ul>
 
@@ -176,85 +177,85 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">pb.read(<span class="number">1</span>,cb)</pre>
+        <li><pre class="example">pb.read(<span class="number">1</span>,cb)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "write"></a>
-    <strong>write (index, name, num, cb)</strong>
+    <strong  style="color: red;">write (index, name, num, cb)</strong>
     </dt>
     <dd>
-    写入一条电话本记录
+    <pre class="example">写入一条电话本记录</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">index</span>
             <span class="types"><span class="type">number</span></span>
-        ，电话本在存储区的位置
+        <pre class="example">电话本在存储区的位置</pre>
         </li>
         <li><span class="parameter">name</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        ，姓名
+        <pre class="example">姓名</pre>
         </li>
         <li><span class="parameter">num</span>
             <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-        ，号码
+        <pre class="example">号码</pre>
         </li>
         <li><span class="parameter">cb</span>
             <span class="types"><span class="type">func</span></span>
-        , functionl类型，写入后的回调函数
-<p> 回调方式为cb(result)：result为true表示成功，false或者nil表示失败
+        <pre class="example"> functionl类型，写入后的回调函数
+<p> 回调方式为cb(result)：result为true表示成功，false或者nil表示失败</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        无
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">无</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">pb.write(<span class="number">1</span>,<span class="string">"zhangsan"</span>,<span class="string">"13233334444"</span>,cb)</pre>
+        <li><pre class="example">pb.write(<span class="number">1</span>,<span class="string">"zhangsan"</span>,<span class="string">"13233334444"</span>,cb)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "delete"></a>
-    <strong>delete (index, cb)</strong>
+    <strong  style="color: red;">delete (index, cb)</strong>
     </dt>
     <dd>
-    删除一条电话本记录
+    <pre class="example">删除一条电话本记录</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">index</span>
             <span class="types"><span class="type">number</span></span>
-        , 电话本在存储区的位置
+        <pre class="example"> 电话本在存储区的位置</pre>
         </li>
         <li><span class="parameter">cb</span>
             <span class="types"><span class="type">func</span></span>
-        , function类型，删除后的回调函数
-<p> 回调方式为cb(result)：result为true表示成功，false或者nil表示失败
+        <pre class="example"> function类型，删除后的回调函数
+<p> 回调方式为cb(result)：result为true表示成功，false或者nil表示失败</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        无
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">无</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">pb.delete(<span class="number">1</span>,cb)</pre>
+        <li><pre class="example">pb.delete(<span class="number">1</span>,cb)</pre></il>
     </ul>
 
 </dd>
@@ -265,8 +266,10 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-04-03 13:28:21 </i>
+<i style="float:right;">Last updated 2018-04-03 17:47:48 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
 </html>
+]==]
+

@@ -1,3 +1,4 @@
+return [==[
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
@@ -118,139 +119,139 @@
     <dl class="function">
     <dt>
     <a name = "regRsp"></a>
-    <strong>regRsp (head, fnc, typ, formt)</strong>
+    <strong  style="color: red;">regRsp (head, fnc, typ, formt)</strong>
     </dt>
     <dd>
-    注册某个AT命令应答的处理函数
+    <pre class="example">注册某个AT命令应答的处理函数</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">head</span>
-          此应答对应的AT命令头，去掉了最前面的AT两个字符
+        <pre class="example">  此应答对应的AT命令头，去掉了最前面的AT两个字符</pre>
         </li>
         <li><span class="parameter">fnc</span>
-           AT命令应答的处理函数
+        <pre class="example">   AT命令应答的处理函数</pre>
         </li>
         <li><span class="parameter">typ</span>
-           AT命令的应答类型，取值范围NORESULT,NUMBERIC,SLINE,MLINE,STRING,SPECIAL
+        <pre class="example">   AT命令的应答类型，取值范围NORESULT,NUMBERIC,SLINE,MLINE,STRING,SPECIAL</pre>
         </li>
         <li><span class="parameter">formt</span>
-         typ为STRING时，进一步定义STRING中的详细格式
+        <pre class="example"> typ为STRING时，进一步定义STRING中的详细格式</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        bool ,成功返回true，失败false
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">bool ,成功返回true，失败false</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">ril.regRsp(<span class="string">"+CSQ"</span>, rsp)</pre>
+        <li><pre class="example">ril.regRsp(<span class="string">"+CSQ"</span>, rsp)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "regUrc"></a>
-    <strong>regUrc (prefix, handler)</strong>
+    <strong  style="color: red;">regUrc (prefix, handler)</strong>
     </dt>
     <dd>
-    注册某个urc的处理函数
+    <pre class="example">注册某个urc的处理函数</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">prefix</span>
-            urc前缀，最前面的连续字符串，包含+、大写字符、数字的组合
+        <pre class="example">    urc前缀，最前面的连续字符串，包含+、大写字符、数字的组合</pre>
         </li>
         <li><span class="parameter">handler</span>
-           urc的处理函数
+        <pre class="example">   urc的处理函数</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        无
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">无</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">ril.regUrc(<span class="string">"+CREG"</span>, neturc)</pre>
+        <li><pre class="example">ril.regUrc(<span class="string">"+CREG"</span>, neturc)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "deRegUrc"></a>
-    <strong>deRegUrc (prefix)</strong>
+    <strong  style="color: red;">deRegUrc (prefix)</strong>
     </dt>
     <dd>
-    解注册某个urc的处理函数
+    <pre class="example">解注册某个urc的处理函数</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">prefix</span>
-            urc前缀，最前面的连续字符串，包含+、大写字符、数字的组合
+        <pre class="example">    urc前缀，最前面的连续字符串，包含+、大写字符、数字的组合</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        无
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">无</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">deRegUrc(<span class="string">"+CREG"</span>)</pre>
+        <li><pre class="example">deRegUrc(<span class="string">"+CREG"</span>)</pre></il>
     </ul>
 
 </dd>
     <dt>
     <a name = "request"></a>
-    <strong>request (cmd, arg, onrsp, delay)</strong>
+    <strong  style="color: red;">request (cmd, arg, onrsp, delay)</strong>
     </dt>
     <dd>
-    发送AT命令到底层软件
+    <pre class="example">发送AT命令到底层软件</pre>
 
 
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">cmd</span>
-           AT命令内容
+        <pre class="example">   AT命令内容</pre>
         </li>
         <li><span class="parameter">arg</span>
-           AT命令参数，例如AT+CMGS=12命令执行后，接下来会发送此参数；AT+CIPSEND=14命令执行后，接下来会发送此参数
+        <pre class="example">   AT命令参数，例如AT+CMGS=12命令执行后，接下来会发送此参数；AT+CIPSEND=14命令执行后，接下来会发送此参数</pre>
         </li>
         <li><span class="parameter">onrsp</span>
-         AT命令应答的处理函数，只是当前发送的AT命令应答有效，处理之后就失效了
+        <pre class="example"> AT命令应答的处理函数，只是当前发送的AT命令应答有效，处理之后就失效了</pre>
         </li>
         <li><span class="parameter">delay</span>
-         延时delay毫秒后，才发送此AT命令
+        <pre class="example"> 延时delay毫秒后，才发送此AT命令</pre>
         </li>
     </ul>
 
     <h3>Returns:</h3>
-    <ol>
-
-        无
-    </ol>
+    <ul>
+        <li>
+        <pre class="example">无</pre></il>
+    </ul>
 
 
 
     <h3>Usage:</h3>
     <ul>
-        <li><pre class="example">ril.request(<span class="string">"AT+CENG=1,1"</span>)</pre></li>
-        <li><pre class="example">ril.request(<span class="string">"AT+CRSM=214,28539,0,0,12,\"64f01064f03064f002fffff\""</span>, <span class="keyword">nil</span>, crsmResponse)</pre></li>
+        <li><pre class="example">ril.request(<span class="string">"AT+CENG=1,1"</span>)</pre></il>
+        <li><pre class="example">ril.request(<span class="string">"AT+CRSM=214,28539,0,0,12,\"64f01064f03064f002fffff\""</span>, <span class="keyword">nil</span>, crsmResponse)</pre></il>
     </ul>
 
 </dd>
@@ -261,8 +262,10 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
-<i style="float:right;">Last updated 2018-04-03 13:28:21 </i>
+<i style="float:right;">Last updated 2018-04-03 17:47:48 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
 </html>
+]==]
+
