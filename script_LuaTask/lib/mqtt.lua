@@ -275,7 +275,13 @@ end
 -- @string host 地址
 -- @string port 端口
 -- @string transport "tcp"
--- @param cert，table或者nil类型，此参数为table类型时，表示要使用ssl连接；为nil时，不使用ssl连接
+-- @param cert，table或者nil类型，此参数为为nil时，表示不使用ssl连接；为table类型时，表示要使用ssl连接，此时传入证书文件配置，格式如下：
+-- {
+--     caCert = "ca.crt", --CA证书文件(Base64编码 X.509格式)，如果存在此参数，则表示客户端会对服务器的证书进行校验；不存在则不校验
+--     clientCert = "client.crt", --客户端证书文件(Base64编码 X.509格式)，服务器对客户端的证书进行校验时会用到此参数
+--     clientKey = "client.key", --客户端私钥文件(Base64编码 X.509格式)
+--     clientPassword = "123456", --客户端证书文件密码[可选]
+-- }
 -- @return result true - 成功，false - 失败
 -- @usage mqttc = mqtt.client("clientid-123", nil, nil, false); mqttc:connect("mqttserver.com", 1883, "tcp")
 function mqttc:connect(host, port, transport, cert)

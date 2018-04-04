@@ -8,40 +8,18 @@ require"socket"
 require"utils"
 module(..., package.seeall)
 
---[[
--- url格式(除hostname外，其余字段可选；目前的实现不支持hash)
---
--- ├──────────┬┬───────────┬─────────────────┬───────────────────────────┬───────┤
---
--- │ protocol ││   auth    │      host       │           path            │ hash  │
---
--- │          ││           ├──────────┬──────┼──────────┬────────────────┤       │
---
--- │          ││           │ hostname │ port │ pathname │     search     │       │
---
--- │          ││           │          │      │          ├─┬──────────────┤       │
---
--- │          ││           │          │      │          │ │    query     │       │
---
--- "http[s]:  // user:pass @ host.com : 8080   /p/a/t/h  ?  query=string   #hash "
---
--- │          ││           │          │      │          │ │              │       │
---
--- └──────────┴┴───────────┴──────────┴──────┴──────────┴─┴──────────────┴───────┘
-]]
-
 local function response(client,cbFnc,result,prompt,head,body)
     if not result then log.error("http.response",result,prompt) end
     if cbFnc then cbFnc(result,prompt,head,body) end
     if client then client:close() end
 end
 
-local function receive(client,timeout,cbFnc)
-    result,data = client:recv(timeout)
-    if not result then
-        response(client,cbFnc,false,"receive timeout")
+local function receive(client,timeout,cbFnc,result,prompt,head,body)
+    res,data = client:recv(timeout)
+    if not res then
+        response(client,cbFnc,result,prompt or "receive timeout",head,body)
     end
-    return result,data
+    return res,data
 end
 
 local function taskClient(method,protocal,auth,host,port,path,cert,head,body,timeout,cbFnc,rcvFilePath)
@@ -114,7 +92,7 @@ local function taskClient(method,protocal,auth,host,port,path,cert,head,body,tim
     local rcvCache,rspHead,rspBody,d1,d2,result,data,statusCode,rcvChunked,contentLen = "",{},{}
     --接收数据，解析状态行和头
     while true do
-        result,data = receive(client,timeout,cbFnc)
+        result,data = receive(client,timeout,cbFnc,false,nil,rspHead,rcvFilePath or table.concat(rspBody))
         if not result then return end
         rcvCache = rcvCache..data
         d1,d2 = rcvCache:find("\r\n\r\n")
@@ -122,7 +100,7 @@ local function taskClient(method,protocal,auth,host,port,path,cert,head,body,tim
             --状态行
             _,d1,statusCode = rcvCache:find("%s(%d+)%s.-\r\n")
             if not statusCode then
-                return response(client,cbFnc,false,"parse received status error")
+                return response(client,cbFnc,false,"parse received status error",rspHead,rcvFilePath or table.concat(rspBody))
             end
             --应答头
             for k,v in string.gmatch(rcvCache:sub(d1+1,d2-2),"(.-):%s*(.-)\r\n") do
@@ -131,7 +109,7 @@ local function taskClient(method,protocal,auth,host,port,path,cert,head,body,tim
 
             end
             if not rcvChunked then
-                contentLen = tonumber(rspHead["Content-Length"] or "0")
+                contentLen = tonumber(rspHead["Content-Length"] or "2147483647")
             end
             --未处理的body数据
             rcvCache = rcvCache:sub(d2+1,-1)
@@ -151,7 +129,7 @@ local function taskClient(method,protocal,auth,host,port,path,cert,head,body,tim
                     chunkSize = tonumber(chunkSize,16)
                     rcvCache = rcvCache:sub(d2+1,-1)                    
                 else
-                    result,data = receive(client,timeout,cbFnc)
+                    result,data = receive(client,timeout,cbFnc,false,nil,rspHead,rcvFilePath or table.concat(rspBody))
                     if not result then return end
                     rcvCache = rcvCache..data
                 end
@@ -162,7 +140,7 @@ local function taskClient(method,protocal,auth,host,port,path,cert,head,body,tim
             --解析chunk data
             if chunkSize then
                 if rcvCache:len()<chunkSize+2 then
-                    result,data = receive(client,timeout,cbFnc)
+                    result,data = receive(client,timeout,cbFnc,false,nil,rspHead,rcvFilePath or table.concat(rspBody))
                     if not result then return end
                     rcvCache = rcvCache..data
                 else
@@ -171,8 +149,8 @@ local function taskClient(method,protocal,auth,host,port,path,cert,head,body,tim
                         --保存到文件中
                         if rcvFilePath then
                             local file = io.open(rcvFilePath,"a+")
-                            if not file then return response(client,cbFnc,false,"receive：open file error") end
-                            if not file:write(chunkData) then response(client,cbFnc,false,"receive：write file error") end
+                            if not file then return response(client,cbFnc,false,"receive：open file error",rspHead,rcvFilePath or table.concat(rspBody)) end
+                            if not file:write(chunkData) then response(client,cbFnc,false,"receive：write file error",rspHead,rcvFilePath or table.concat(rspBody)) end
                             file:close()
                         --保存到缓冲区中
                         else
@@ -194,8 +172,8 @@ local function taskClient(method,protocal,auth,host,port,path,cert,head,body,tim
             if rcvFilePath then
                 if data:len()>0 then
                     local file = io.open(rcvFilePath,"a+")
-                    if not file then return response(client,cbFnc,false,"receive：open file error") end
-                    if not file:write(data) then response(client,cbFnc,false,"receive：write file error") end
+                    if not file then return response(client,cbFnc,false,"receive：open file error",rspHead,rcvFilePath or table.concat(rspBody)) end
+                    if not file:write(data) then response(client,cbFnc,false,"receive：write file error",rspHead,rcvFilePath or table.concat(rspBody)) end
                     file:close()
                 end
             else
@@ -203,7 +181,7 @@ local function taskClient(method,protocal,auth,host,port,path,cert,head,body,tim
             end
             rmnLen = rmnLen-data:len()
             if rmnLen==0 then break end
-            result,rcvCache = receive(client,timeout,cbFnc)
+            result,rcvCache = receive(client,timeout,cbFnc,contentLen==0x7FFFFFFF,contentLen==0x7FFFFFFF and statusCode or nil,rspHead,rcvFilePath or table.concat(rspBody))
             if not result then return end
         end
         return response(client,cbFnc,true,statusCode,rspHead,rcvFilePath or table.concat(rspBody))
@@ -225,7 +203,13 @@ end
 -- " http[s]  :// user:pass @ host.com : 8080   /p/a/t/h  ?  query=string   #hash " 
 -- |          |||           |          |      |          | |              |       |
 -- |------------------------------------------------------------------------------|
--- @param cert，table或者nil类型，ssl证书，当url为https类型时，此参数才有意义。参数格式参考socket模块中tcp接口的参数cert
+-- @param cert，table或者nil类型，ssl证书，当url为https类型时，此参数才有意义。cert格式如下：
+-- {
+--     caCert = "ca.crt", --CA证书文件(Base64编码 X.509格式)，如果存在此参数，则表示客户端会对服务器的证书进行校验；不存在则不校验
+--     clientCert = "client.crt", --客户端证书文件(Base64编码 X.509格式)，服务器对客户端的证书进行校验时会用到此参数
+--     clientKey = "client.key", --客户端私钥文件(Base64编码 X.509格式)
+--     clientPassword = "123456", --客户端证书文件密码[可选]
+-- }
 -- @tab head，nil或者table类型，自定义请求头
 --
 --              http.lua会自动添加Host: XXX、Connection: short、Content-Length: XXX三个请求头

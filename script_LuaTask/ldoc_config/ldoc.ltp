@@ -169,7 +169,7 @@
 #  end
     </dt>
     <dd>
-    <pre class="example">$(M(ldoc.descript(item),item))</pre>
+    <pre class="example"  style="color: red;">$(M(ldoc.descript(item),item))</pre>
 
 #   if ldoc.custom_tags then
 #    for custom in iter(ldoc.custom_tags) do

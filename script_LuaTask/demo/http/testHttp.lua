@@ -33,7 +33,7 @@ local function cbFncFile(result,prompt,head,filePath)
         
         --输出文件内容，如果文件太大，一次性读出文件内容可能会造成内存不足，分次读出可以避免此问题
         if size<=4096 then
-            plog.info("testHttp.cbFncFile",filehandle:read("*all"))
+            log.info("testHttp.cbFncFile",filehandle:read("*all"))
         else
 			
         end
@@ -50,26 +50,11 @@ http.request("GET","www.lua.org",nil,nil,nil,nil,cbFnc)
 --http.request("GET","www.lua.org:80/about.html",nil,nil,nil,30000,cbFnc)
 --http.request("POST","www.iciba.com",nil,nil,"Luat",30000,cbFnc)
 --http.request("POST","36.7.87.100:6500",nil,{head1="value1"},{[1]="begin\r\n",[2]={file="/lua/http.lua"},[3]="end\r\n"},30000,cbFnc)
-
+--下面4行代码是利用文件流模式，上传录音文件的demo，使用的URL是随意编造的
 --[[
--- url格式(除hostname外，其余字段可选；目前的实现不支持hash)
---
--- ├──────────┬┬───────────┬─────────────────┬───────────────────────────┬───────┤
---
--- │ protocol ││   auth    │      host       │           path            │ hash  │
---
--- │          ││           ├──────────┬──────┼──────────┬────────────────┤       │
---
--- │          ││           │ hostname │ port │ pathname │     search     │       │
---
--- │          ││           │          │      │          ├─┬──────────────┤       │
---
--- │          ││           │          │      │          │ │    query     │       │
---
--- "http[s]:  // user:pass @ host.com : 8080   /p/a/t/h  ?  query=string   #hash "
---
--- │          ││           │          │      │          │ │              │       │
---
--- └──────────┴┴───────────┴──────────┴──────┴──────────┴─┴──────────────┴───────┘
+http.request("POST","www.test.com/postTest?imei=1&iccid=2",nil,
+         {['Content-Type']="application/octet-stream",['Connection']="keep-alive"},
+         {[1]={['file']="/RecDir/rec001"}},
+         30000,cbFnc)
 ]]
 
